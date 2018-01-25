@@ -4,7 +4,8 @@
   "description": "Jest Transformer to compile mustache templates",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest",
+    "watch:test": "jest --watch"
   },
   "repository": {
     "type": "git",
