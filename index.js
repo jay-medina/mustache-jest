@@ -1,4 +1,3 @@
-//@ts-check
 // const hogan = require('hogan.js');
 
 /**

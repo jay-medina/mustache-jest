@@ -1,10 +1,10 @@
-## Mustache Transformer for Jest. 
+## Mustache Transformer for Jest.
 
 Simple module to compile mustache html templates for Jest testing.
 
 Transformer uses hogan.js: https://github.com/twitter/hogan.js/
 
-### Jest configuration: 
+### Jest configuration:
 
 In order to properly configure transformer, the following needs to occur:
 
@@ -15,13 +15,14 @@ Under transform object, and a mapper to the transformer. Below is an example of 
 ```JSON
   "transform": {
     "^.+\\.tsx?$": "ts-jest",
-    "^.+\\.html?$": "<rootDir>/transformer/mustacheTransformer.js"
+    "^.+\\.html?$": "mustache-jest"
   }
 ```
 
 #### Within JS/TS file, the file can be imported as ES6 or commonjs module:
 
 ES6 Module:
+
 ```TypeScript
  import testFileTemplate from './test.html';
 
@@ -29,7 +30,9 @@ ES6 Module:
    return testFileTemplate(data);
  }
 ```
+
 CommonJS:
+
 ```JavaScript
   const testFileTemplate = require('./test.html');
 
@@ -40,11 +43,12 @@ CommonJS:
 
 #### To use:
 
-Invoke template as a function. The `render` function from the compiled template is returned and can be invoked directly. 
+Invoke template as a function. The `render` function from the compiled template is returned and can be invoked directly.
 
 Example:
 
-test.html 
+test.html
+
 ```html
   <div>
     <p>Hello {{name}}!</p>
@@ -58,11 +62,13 @@ test.html
 ```
 
 test.js
+
 ```JavaScript
   console.log(testFileTemplate({ name: 'Josie', shouldShow: true }));
 ```
 
 output:
+
 ```html
   <div>
     <p>Hello Josie</p>
