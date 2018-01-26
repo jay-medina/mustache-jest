@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --config='config/jestconfig.json'",
-    "watch:test": "jest --watch"
+    "watch:test": "jest --watch --config='config/jestconfig.json'"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mrfunkycold/mustache-jest.git"
   },
   "keywords": ["Jest", "Mustache", "Hogan", "TypeScript"],
-  "author": "josemedina921@gmail.com",
+  "author": "Jose Medina <josemedina921@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mrfunkycold/mustache-jest/issues"
