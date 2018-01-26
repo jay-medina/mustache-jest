@@ -1,5 +1,3 @@
-// const hogan = require('hogan.js');
-
 /**
  * Mustache Transformer for Jest. Uses hogan.js for transformation
  * https://github.com/twitter/hogan.js/
@@ -9,7 +7,7 @@
  * Within jest configuration:
  *  Under transform object:
  *    "transform": {
- *      "^.+\\.html?$": "<rootDir>/transformer/mustacheTransformer.js"
+ *      "^.+\\.html?$": "mustache-jest"
  *    }
  *
  * Within JS/TS file, the file can be imported as ES6 or commonjs module:
@@ -38,13 +36,15 @@
 function process(src, filename, config, options) {
   const hoganImport = 'var hogan = require("hogan.js");';
   const srcStringified = JSON.stringify(src);
-  const hoganCompile = 'var compiledTemplate = hogan.compile(' + srcStringified + ');';
-  const compiledRenderFunction = 'compiledTemplate.render.bind(compiledTemplate);';
+  const hoganCompile =
+    'var compiledTemplate = hogan.compile(' + srcStringified + ');';
+  const compiledRenderFunction =
+    'compiledTemplate.render.bind(compiledTemplate);';
   const returnStatement = 'module.exports = ' + compiledRenderFunction;
 
   return hoganImport + hoganCompile + returnStatement;
 }
 
 module.exports = {
-  process,
+  process
 };
