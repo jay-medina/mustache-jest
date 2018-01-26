@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mrfunkycold/mustache-jest.svg?branch=master)](https://travis-ci.org/mrfunkycold/mustache-jest)
+
 ## Mustache Transformer for Jest.
 
 Simple module to compile mustache html templates for Jest testing.
