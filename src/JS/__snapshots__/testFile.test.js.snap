@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renderToDiv contains the content from the compiled template 1`] = `
+exports[`renderToDiv when shouldShow is false contains the content from the compiled template 1`] = `
+"<div>
+  <p>Hello josie!</p>
+  <div>GoodBye!!</div>
+</div>
+"
+`;
+
+exports[`renderToDiv when shouldShow is true contains the content from the compiled template 1`] = `
 "<div>
   <p>Hello josie!</p>
   <div>Welcome!</div>
