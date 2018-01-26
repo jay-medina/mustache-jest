@@ -1,6 +1,6 @@
 {
   "name": "mustache-jest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Jest Transformer to compile mustache templates",
   "main": "index.js",
   "scripts": {
