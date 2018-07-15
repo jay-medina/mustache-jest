@@ -1,4 +1,4 @@
-const template = require('./testTemplate.html');
+const template = require('./testTemplate.html').default;
 
 /**
  *

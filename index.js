@@ -17,7 +17,7 @@
  *
  *   CommonJS:
  *
- *   const testFileTemplate = require('./test.html');
+ *   const testFileTemplate = require('./test.html').default;
  *
  * To use:
  *
@@ -36,15 +36,13 @@
 function process(src, filename, config, options) {
   const hoganImport = 'var hogan = require("hogan.js");';
   const srcStringified = JSON.stringify(src);
-  const hoganCompile =
-    'var compiledTemplate = hogan.compile(' + srcStringified + ');';
-  const compiledRenderFunction =
-    'compiledTemplate.render.bind(compiledTemplate);';
-  const returnStatement = 'module.exports = ' + compiledRenderFunction;
+  const hoganCompile = 'var compiledTemplate = hogan.compile(' + srcStringified + ');';
+  const compiledRenderFunction = 'compiledTemplate.render.bind(compiledTemplate)';
+  const returnStatement = 'module.exports = { default: ' + compiledRenderFunction + ' }; ';
 
   return hoganImport + hoganCompile + returnStatement;
 }
 
 module.exports = {
-  process
+  process,
 };
