@@ -36,7 +36,7 @@ ES6 Module:
 CommonJS:
 
 ```JavaScript
-  const testFileTemplate = require('./test.html');
+  const testFileTemplate = require('./test.html').default;
 
   function renderHtml(data) {
    return testFileTemplate(data);
