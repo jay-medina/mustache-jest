@@ -1,27 +1,15 @@
-const renderToDiv = require('./testFile');
+const template = require('./testTemplate.html').default
 
 describe('renderToDiv', () => {
-  let divElement;
-
   describe('when shouldShow is true', () => {
-    beforeEach(() => {
-      divElement = document.createElement('div');
-      renderToDiv(divElement, { name: 'josie', shouldShow: true });
-    });
-
     it('contains the content from the compiled template', () => {
-      expect(divElement.innerHTML).toMatchSnapshot();
+      expect(template({ name: 'josie', shouldShow: true })).toMatchSnapshot();
     });
   });
 
   describe('when shouldShow is false', () => {
-    beforeEach(() => {
-      divElement = document.createElement('div');
-      renderToDiv(divElement, { name: 'josie', shouldShow: false });
-    });
-
     it('contains the content from the compiled template', () => {
-      expect(divElement.innerHTML).toMatchSnapshot();
+      expect(template({ name: 'josie', shouldShow: false })).toMatchSnapshot();
     });
   });
 });
