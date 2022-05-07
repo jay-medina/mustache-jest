@@ -40,7 +40,9 @@ function process(src, filename, config, options) {
   const compiledRenderFunction = 'compiledTemplate.render.bind(compiledTemplate)';
   const returnStatement = 'module.exports = { default: ' + compiledRenderFunction + ' }; ';
 
-  return hoganImport + hoganCompile + returnStatement;
+  return {
+    code: hoganImport + hoganCompile + returnStatement,
+  };
 }
 
 module.exports = {
